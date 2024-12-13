@@ -7,6 +7,7 @@ const uploadPhoto = upload.fields([
     { name: "photo", maxCount: 1 },
     { name: "qr_code", maxCount: 1 }
   ]);
+  
 router.get("/role/:role", protect, adminController.getAdminByRole);
 router.get("/", protect, adminController.getAllAdmins);
 router.post("/", uploadPhoto, protect, adminController.createAdmin);
